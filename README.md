@@ -1,1 +1,3 @@
-# physiopsychotest
+physiopsychotesting
+
+Program for analyze psychological and physiological sustained attention

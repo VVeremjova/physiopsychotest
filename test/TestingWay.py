@@ -10,7 +10,7 @@ class TestingWay:
     _OLD_BOT_VALUE = 0
 
     def __init__(self):
-        return 1+1
+        pass
 
     @classmethod
     def CountCorrectSums(self):

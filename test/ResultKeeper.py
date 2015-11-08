@@ -6,31 +6,30 @@ class ResultKeeper:
      def __init__(self):
         self.data = []
 
-     @classmethod
      def AvarageActionsInMin(self):
-         TestingWay.CorrectOutputValues(self)
+          TestingWay.CorrectOutputValues(self)
 
-     @classmethod
      def AvarageActionsInMinWithShift(self):
-         if(TestingWay.GetUserPrintedValues()):
+          #if(TestingWay.GetUserPrintedValues()):
+          pass
+               
 
-      @classmethod
      def AvarageErrorsInMin(self):
-         TestingWay.CorrectOutputValues(self)
+          #TestingWay.CorrectOutputValues(self)
+          pass
 
-     @classmethod
      def CountArithmErrors(self):
-         ResultKeeper._ARITM_ERRORS= ResultKeeper._ARITM_ERRORS +1
+          ResultKeeper._ARITM_ERRORS= ResultKeeper._ARITM_ERRORS +1
 
-      @classmethod
      def CountGroupWithErrors(self):
-         ResultKeeper._GROUP_ERRORS= ResultKeeper._GROUP_ERRORS +1
+          ResultKeeper._GROUP_ERRORS= ResultKeeper._GROUP_ERRORS +1
 
-     @classmethod
      def CountOfSumInEvery30Sec(self):
-         if(TestingWay.GetUserPrintedValues()):
+          if(TestingWay.GetUserPrintedValues()):
+               pass
 
-      @classmethod
      def CountShiftErrors(self):
-         ResultKeeper._SHIFT_ERRORS= ResultKeeper._SHIFT_ERRORS +1
+          ResultKeeper._SHIFT_ERRORS = ResultKeeper._SHIFT_ERRORS +1
 
+     def SustainedAttention(self):
+          return 1
