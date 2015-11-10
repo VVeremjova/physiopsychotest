@@ -1,8 +1,8 @@
 class PrintAndSave():
     def __init__(self, format_strings =None, filename = "test1"):
         self.format_strings = format_strings
-        print "!!!!!!!!!!!"
-        print self.format_strings
+        #print "!!!!!!!!!!!"
+        #print self.format_strings
         self.filename = filename
 
     def save_in_file(self, data = "oops" ):
