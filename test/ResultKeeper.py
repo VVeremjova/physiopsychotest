@@ -1,7 +1,11 @@
 class ResultKeeper:
+     """Keep all testing results,
+     including errors, count of sum,
+     all information, that can be get from tests """
      _SHIFT_ERRORS = 0
      _GROUP_ERRORS = 0
      _ARITM_ERRORS = 0
+     _TIME_ERROR = False
 
      def __init__(self):
         self.data = []
