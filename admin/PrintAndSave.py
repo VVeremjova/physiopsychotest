@@ -1,3 +1,5 @@
+import saveInDB 
+
 class PrintAndSave():
     def __init__(self, format_strings =None, filename = "test1"):
         self.format_strings = format_strings
@@ -14,6 +16,11 @@ class PrintAndSave():
             fn.write(data)
             print "got nothing"
         
+    def save_in_db(self, data):
+        db = SaveInDB.SaveInDB(self.filename)
+        db.addNewClient
+
+
 
     def print_result(self, data = "oops"):
         print "We should use printer here"

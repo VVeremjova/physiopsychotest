@@ -1,6 +1,6 @@
 import random
 import time
-import ResultKeeper from ResultKeeper
+from ResultKeeper import ResultKeeper
 from admin.adminPart import Admin
 
 class TestingWay:
@@ -15,10 +15,10 @@ class TestingWay:
     def __init__(self):
         _CORRECT = 0
         _ERRORS  = 0
-        _TOP_VALUE = 0
-        _BOT_VALUE = 0
-        _OLD_TOP_VALUE = 0
-        _OLD_BOT_VALUE = 0
+        # _TOP_VALUE = 0
+        # _BOT_VALUE = 0
+        # _OLD_TOP_VALUE = 0
+        # _OLD_BOT_VALUE = 0
         result_keeper = ResultKeeper()
         current_testing_time = 0
 
@@ -39,9 +39,11 @@ class TestingWay:
         pass
         # return self._CORRECT
 
-     def CreateOutputValues(self):
-        "will be overriden"
-        pass
+    def GetTopInputValue(self, value):
+        return value
+
+    def GetBotInputValue(self, value):
+        return value
 
     def GetRandomNumbers(self):
         return random.randint(0,9)

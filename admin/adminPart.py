@@ -28,8 +28,8 @@ class Admin():
     def save_in_file(self, value = True):
         self.save_in_file = value
 
-    def print_result(self, print_result = True):
-        self.print_result = print_result
+    def save_in_db(self, save_in_db = True):
+        self.save_in_db = save_in_db
         
     def format_string(self, formats=None):
         self.format_strings = formats
@@ -42,5 +42,5 @@ class Admin():
         printsave = PrintAndSave.PrintAndSave(self.format_strings, self.filename)
         if self.save_in_file:
            printsave.save_in_file()
-        if self.print_result:
-           printsave.print_result()    
+        if self.save_in_db:
+           printsave.save_in_db()    

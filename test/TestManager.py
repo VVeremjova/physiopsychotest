@@ -19,25 +19,25 @@ class TestManager:
 
 
      def StartTesting(self):
-          "Процесс тестирования начинается здесь"          
+          "Testing process"          
           print "Start here"          
           # do it until count of switches will not stop  
           test_start_1way = TestingWay1()   
           test_start_2way = TestingWay2()           
-          while not isTestingFinished():
-               if (getway == 1):
-                    res = test_start_1way.Start()
-                    if res == false:
-                         break
-                    self.curr_shift_count=self.curr_shift_count+1
-                    getway =2
-                    continue
-               if (getway == 2):
-                    res = test_start_2way.Start()
-                    if res == false:
-                         break
-                    getway=1
-                    self.curr_shift_count=self.curr_shift_count+1
+          # while not isTestingFinished():
+               # if (getway == 1):
+               #      res = test_start_1way.Start()
+               #      if res == false:
+               #           break
+               #      self.curr_shift_count=self.curr_shift_count+1
+               #      getway =2
+               #      continue
+               # if (getway == 2):
+               #      res = test_start_2way.Start()
+               #      if res == false:
+               #           break
+               #      getway=1
+               #      self.curr_shift_count=self.curr_shift_count+1
 
      def isTestingFinished(self):
           "return true if all conditions are satisfied"
