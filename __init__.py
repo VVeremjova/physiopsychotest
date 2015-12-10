@@ -1,20 +1,20 @@
-from admin.adminPart import Admin
-from admin.FormatResult import FormatResult
-if __name__ == "__main__":
-    admin = Admin()
-    fres = FormatResult()
-    formres = fres.fresult()
-    #print formres
-    admin.format_string(formres)
-    admin.set_filename("newtest1.txt")
-    print "is save"
-    admin.print_result = False
-    admin.save_in_file()
-    admin.save_results()
-    #print ">>>>>>>>>>>>>"
-    #admin.print_result()
-    #admin.save_results()
-    #print ">>>>>>>>>>>>>"
-    #admin.save_results()
-    #print admin.__doc__
-    
+
+def isSQLite3(filename):
+    from os.path import isfile
+
+    return isfile(filename)
+
+# Check that db is ready
+from admin.saveInDB import SaveInDB
+from start import Start
+# Will set db_name in config
+db_name = "example.db"
+db = SaveInDB(db_name);
+is_programm_ready= False
+# is_programm_ready = isSQLite3(db_name)
+if not is_programm_ready:
+    # db.createDB();
+    is_programm_ready = isSQLite3(db_name)
+# db.closeDB()
+
+start_program = Start(None,is_programm_ready, db_name)
