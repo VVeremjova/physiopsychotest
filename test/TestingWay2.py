@@ -4,21 +4,24 @@ from test.TestingWay import TestingWay
 class TestingWay2(TestingWay):
      def __init__(self):
         TestingWay.__init__(self)
-        self.data = []
+        print("");
 
      
+     @classmethod
      def CorrectInputValues(self):
-        TestingWay._TOP_VALUE = GetTopValue()
-        TestingWay._BOT_VALUE = GetBotValue()
-        if(TestingWay._BOT_VALUE==GetBotInputField & TestingWay._TOP_VALUE + TestingWay._BOT_VALUE == GetTopInputField):
-            TestingWay._CORRECT = TestingWay._CORRECT+1
+        print (TestingWay._BOT_INPUT_VALUE + TestingWay2._TOP_INPUT_VALUE)
+        if((TestingWay2._TOP_INPUT_VALUE==TestingWay2._TOP_VALUE) & ((TestingWay2._TOP_INPUT_VALUE + TestingWay2._BOT_INPUT_VALUE) == TestingWay2._BOT_VALUE)):
+            TestingWay2._CORRECT = TestingWay2._CORRECT+1
         else:
-            TestingWay._ERRORS = TestingWay._ERRORS +1
-        return TestingWay._CORRECT
+            TestingWay2._ERRORS = TestingWay2._ERRORS +1
+        return TestingWay2._CORRECT
 
-     
+     @classmethod
      def CorrectOutputValues(self):
-         TestingWay.CorrectOutputValues(self)
+         if(TestingWay2._TOP_INPUT_VALUE!=TestingWay2._OLD_TOP_VALUE & TestingWay2._BOT_INPUT_VALUE!= TestingWay2._OLD_BOT_VALUE):
+             return "diff"
+         else:
+             return "same"
 
      
      def CreateOutputValues(self):

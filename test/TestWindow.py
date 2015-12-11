@@ -1,7 +1,13 @@
+import random
+
 from TestManager import TestManager
 from TestingWay import TestingWay
+from TestingWay1 import TestingWay1
+from TestingWay2 import TestingWay2
 import Tkinter
 import tkMessageBox
+
+from TestingWay import TestingWay
 
 class TestWindow(Tkinter.Tk):
     def __init__(self,parent):
@@ -11,7 +17,7 @@ class TestWindow(Tkinter.Tk):
         starttest = TestingWay() 
         # starttest.StartTesting()
 
-    def getNewValues(self,first=0,second=0):
+    def getNewValues(self,first,second):
         self.first = first
         self.second = second
         self.label1.config(text=self.first)
@@ -19,11 +25,11 @@ class TestWindow(Tkinter.Tk):
 
     def showAll(self):
         self.label1 = Tkinter.Label(self,
-                              anchor="w",fg="white",bg="red", text = 5)
+                              anchor="w",fg="white",bg="red", text=TestingWay.GetRandomNumbers("T"))
         self.label1.grid(column=0,row=1)
 
         self.label2 = Tkinter.Label(self,
-                              anchor="w",fg="white",bg="blue", text = 3)
+                              anchor="w",fg="white",bg="blue", text=TestingWay.GetRandomNumbers("B"))
         self.label2.grid(column=0,row=2)
 
 
@@ -46,12 +52,18 @@ class TestWindow(Tkinter.Tk):
         value2 = self.entry2.get()
         print value1
         print value2
-
+        TestingWay._TOP_VALUE = int(value1)
+        TestingWay._BOT_VALUE = int(value2)
         # self.starttest.GetTopInputValue(value1)
         # self.starttest.GetBotInputValue(value2)
-
-        self.getNewValues(value1,value2)
+        print("Top value : " + TestingWay._TOP_INPUT_VALUE.__str__())
+        print ("Bot value : " + TestingWay._BOT_INPUT_VALUE.__str__())
+        #print TestingWay2.CorrectOutputValues()
+        #print TestingWay1.CorrectInputValues()
+        print TestingWay2.CorrectInputValues()
+        self.getNewValues(TestingWay.GetRandomNumbers("T"),TestingWay.GetRandomNumbers("B"))
         print "You pressed enter !"
+
         
     def TimeFinished(self):
         tkMessageBox.showinfo( "End", "Time of testing is finished.")
