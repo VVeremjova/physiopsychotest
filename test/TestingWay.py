@@ -6,7 +6,8 @@ from admin.adminPart import Admin
 class TestingWay:
     "Keep actions that the same to both ways of testing"
     _CORRECT = 0
-    _ERRORS  = 0
+    _ERRORS_WAY  = 0
+    _ERRORS_VAL = 0
     _TOP_VALUE = 0
     _BOT_VALUE = 0
     _OLD_TOP_VALUE = 0
@@ -15,12 +16,6 @@ class TestingWay:
     _BOT_INPUT_VALUE = 0
 
     def __init__(self):
-        _CORRECT = 0
-        _ERRORS  = 0
-        _TOP_VALUE = 0
-        _BOT_VALUE = 0
-        _OLD_TOP_VALUE = 0
-        _OLD_BOT_VALUE = 0
         result_keeper = ResultKeeper()
         current_testing_time = 0
 

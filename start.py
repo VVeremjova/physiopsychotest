@@ -1,70 +1,43 @@
 from Tkinter  import *
 import tkMessageBox
 import test.TestWindow
-import admin.AdminVisual
 
-from admin.saveInDB import SaveInDB
 
-import ConfigParser
 
-class Start(Tk):
-    def is_programm_ready(self,start_program): 
-        program_is_ready="program is not ready"
-        if start_program:
-            program_is_ready="program is ready"
-        L2 = Label(self, text=program_is_ready)
-        L2.pack( side = RIGHT)
+def is_programm_ready(is_ready):
+	program_is_ready="program is not ready"
+	if is_ready:
+		program_is_ready="program is ready"
+	L2 = Label(top, text=program_is_ready)
+	L2.pack( side = RIGHT)
 
-    def startTesting(self):
-        test.TestWindow.TestWindow(None)
+def startTesting():
+	test.TestWindow.TestWindow(None)
 
-    def helloCallBack(self):
-       tkMessageBox.showinfo( "Start testing programm", "Here will move to testing part")
 
-    def about(self):
-       tkMessageBox.showinfo( "About", "version 0.0.0")
 
-    def startTestingDemo(self):
-       tkMessageBox.showinfo( "Demo", "Will show how use this program")
+top = Tk()
 
-    def updateUserInDB(self):
-        db = SaveInDB(self.db_name)
+L1 = Label(top, text="Print User Name")
+L1.pack( side = LEFT)
 
-        name_field = self.user_name
-        new_name = name_field.get()
-        if db.searchClient(new_name)==None :
-            tkMessageBox.showinfo( "Error", "User not found")
-        else:
-            tkMessageBox.showinfo( "Ok", "User found")
-        db.close()
 
-    def goToAdmin(self):
-        name_field = self.user_name
-        new_name = name_field.get()
+E1 = Entry(top, bd =5)
+# E2 = Entry(top, bd =10)
 
-        admin.AdminVisual.AdminVisualPart(None,new_name)
-      
+E1.pack(side = LEFT)
+# E2.pack(side = LEFT)
 
-    def __init__(self, parent,is_programm_ready, db):
-        Tk.__init__(self,parent)
-        self.parent = parent 
+def helloCallBack():
+   tkMessageBox.showinfo( "Start testing programm", "Here will move to testing part")
 
-        self.db_name= db   
-        self.is_programm_ready(is_programm_ready)
-        lbl_user_name = Label(self, text="User Name")
-        lbl_user_name.pack( side = LEFT)
-        self.user_name = Entry(self, bd =5)
-        self.user_name.pack(side = LEFT)
-        B = Button(self, text ="Start testing", command = self.startTesting)
-        B0 = Button(self, text ="Update user", command = self.updateUserInDB)
-        B1 = Button(self, text ="Demo", command = self.startTestingDemo)
-        B2 = Button(self, text ="About", command = self.about)
-        B3 = Button(self, text ="Add new user", command = self.goToAdmin)
+def about():
+   tkMessageBox.showinfo( "About", "version 0.0.0")
 
-        B.pack()
-        B0.pack()
-        B1.pack(side = BOTTOM)
-        B2.pack(side = BOTTOM)
-        B3.pack(side = BOTTOM)
-        self.mainloop()
+B = Button(top, text ="Start testing", command = startTesting)
+B2 = Button(top, text ="About", command = about)
+B3 = Button(top, text ="Reda", command = about)
+B.pack()
+B2.pack(side = BOTTOM)
+top.mainloop()
 
