@@ -15,11 +15,8 @@ class SaveInDB() :
                       last_work_experience text,
                       comments text)''')
 
-        # c.execute('''CREATE TABLE Results
-        #              (name text, total_errors text, gender text, date_age text, 
-        #               occupation text, work_experience text,
-        #               last_work_experience text,
-        #               comments text)''')
+        c.execute('''CREATE TABLE Results
+                     (name text, total_errors int, correct_answers int)''')
         self.conn.commit()
 
     def addNewClient(self,params):

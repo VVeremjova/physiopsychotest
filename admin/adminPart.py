@@ -2,13 +2,6 @@
 import PrintAndSave
 class Admin():
     "Get and set information about all values that are using in testing"
-    # default values
-    # поле времени ввода ответа во время тестирования (sec)
-    # time_answer = 2
-    # количество смен переключений (sec)
-    # shift_count = 5
-    # время смены способа тестирования (sec)
-    # time_change_shifting = 30
     
     def __init__(self, time_answer = 2,
                  shift_count = 5, time_change_shifting = 30):
